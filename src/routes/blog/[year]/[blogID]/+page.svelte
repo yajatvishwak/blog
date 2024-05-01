@@ -14,7 +14,7 @@
       {moment(data.metadata.date, "DD/MM/YYYY").format("MMMM Do, YYYY")}
     </div>
     <div>•</div>
-    <div class="badge badge-primary bg-yellow-500 text-black border-none">
+    <div class="badge badge-primary bg-yellow-400 text-black border-none">
       {data.metadata.tag}
     </div>
   </div>
