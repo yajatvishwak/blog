@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>{data.metadata.title} | Yajat's Blog</title>
+  <title>{data.metadata.title}</title>
 </svelte:head>
 
 <div class="flex flex-col gap-3">

@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-  <title>All Blogs | Yajat's Blog</title>
+  <title>All Blogs | Yajat Blogs</title>
 </svelte:head>
 
 <div class="mt-8 flex flex-col">
