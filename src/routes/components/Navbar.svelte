@@ -1,26 +1,41 @@
-<div class="my-4 flex items-center justify-between">
-  <div class="font-bold">Yajat <span class="text-amber-400">Blogs</span></div>
+<script>
+  import { isLightMode } from "../../store/theme.store";
+</script>
+
+<div class="my-2 lg:my-4 flex items-center justify-between">
+  <a href="/" class="font-bold"
+    >Yajat <span class="text-amber-400">Blogs</span></a
+  >
   <div class="flex items-center gap-3">
-    <div
-      class="tooltip tooltip-bottom"
-      data-tip="Thoughts, Experiments, Experiences"
-    >
+    <div class="mb-2 flex items-center gap-3">
       <div
-        class="label-text-alt mb-1 uppercase cursor-pointer hover:text-amber-400 transition-all"
+        class="tooltip tooltip-bottom"
+        data-tip="Thoughts, Experiments, Experiences"
       >
-        Blogs
+        <a
+          href="/"
+          class="label-text-alt uppercase cursor-pointer hover:text-amber-400 transition-all"
+        >
+          Blogs
+        </a>
       </div>
-    </div>
-    <div class="tooltip tooltip-bottom" data-tip="Who is yajat?">
-      <div
-        class="label-text-alt mb-1 uppercase cursor-pointer hover:text-amber-400 transition-all"
-      >
-        Who?
+      <div class="tooltip tooltip-bottom" data-tip="Who is Yajat?">
+        <a
+          href="/whoami"
+          class="label-text-alt uppercase cursor-pointer hover:text-amber-400 transition-all"
+        >
+          Who?
+        </a>
       </div>
     </div>
     <div>
       <label class="swap swap-rotate">
-        <input type="checkbox" class="theme-controller" value="light" />
+        <input
+          type="checkbox"
+          bind:checked={$isLightMode}
+          class="theme-controller"
+          value="light"
+        />
         <!-- sun icon -->
         <svg
           class="swap-off fill-current w-5 h-5"
