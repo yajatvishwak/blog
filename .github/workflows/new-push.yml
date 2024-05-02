@@ -1,4 +1,4 @@
-name: new-blog
+name: new-push
 
 on:
   push:
@@ -6,12 +6,11 @@ on:
       - main
 
 jobs:
-
   build:
-    name: Build
+    name: Update server
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
+    - name: update server with new code
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.HOST }}
