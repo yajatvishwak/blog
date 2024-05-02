@@ -1,9 +1,9 @@
 ---
 title: Hello Blog
 blogID: hello
-date: 12/03/2024
+date: 2/05/2024
 tag: programming
-description: this is some description
+description: Cutie patotie gf
 ---
 
 ### 1. Well well well...

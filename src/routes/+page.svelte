@@ -4,7 +4,7 @@
   import { onMount } from "svelte";
 
   onMount(() => {
-    posthog.init("phc_MUmDNy1h50V4nkMJre4t2bmouG6oh54h0wxGJEDtu5Y", {
+    posthog.init("phc_Linjz0tq8Jlf3VgjdPECi4pei6mFQ7i4piogXUYij4N", {
       api_host: "https://us.i.posthog.com",
     });
   });
