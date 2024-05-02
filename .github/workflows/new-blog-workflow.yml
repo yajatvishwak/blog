@@ -1,12 +1,12 @@
 name: new-blog
 
 on:
-  # push:
-  #   branches:
-  #     - main
-  pull_request:
+  push:
     branches:
-      - blog
+      - main
+  # pull_request:
+  #   branches:
+  #     - blog
 
 jobs:
   build:
