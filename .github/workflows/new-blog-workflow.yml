@@ -1,19 +1,22 @@
-name: new-blog
+name: Node.js CI
 
 on:
-  push:
+  pull_request:
     branches:
-      - main
-  # pull_request:
-  #   branches:
-  #     - blog
+      - blog
+    paths:
+      - '**' # Trigger for any changes in the PR
+    types:
+      - opened
+      - synchronize
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
     - name: Setup Node.js
       uses: actions/setup-node@v2
@@ -23,5 +26,14 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Test
+    - name: Run tests
       run: npm test
+
+  merge-approval:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+    - name: Check if tests passed
+      run: exit $(echo "${{ needs.build-and-test.outcome }}" | grep -c "success")
