@@ -1,6 +1,6 @@
 ---
 title: Wow Blog
-blogID: wow
+blogID: wow1
 date: 12/03/2024
 tag: programming
 description: this is some description
