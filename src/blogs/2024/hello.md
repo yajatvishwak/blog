@@ -1,12 +1,12 @@
 ---
-title: First Blog
-blogID: test
+title: Hello Blog
+blogID: hello
 date: 12/03/2024
 tag: programming
 description: this is some description
 ---
 
-### 1. Well well well...2
+### 1. Well well well...
 
 Here is some code to add numbers
 
