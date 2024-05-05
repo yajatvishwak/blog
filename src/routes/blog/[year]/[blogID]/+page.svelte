@@ -18,5 +18,7 @@
       {data.metadata.tag}
     </div>
   </div>
-  <svelte:component this={data.md}></svelte:component>
+  <div class="markdown-component">
+    <svelte:component this={data.md}></svelte:component>
+  </div>
 </div>
