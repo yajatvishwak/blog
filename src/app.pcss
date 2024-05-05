@@ -40,6 +40,16 @@ body {
   font-family: "Switzer", sans-serif;
 }
 
+a {
+  @apply font-medium text-amber-600 dark:text-amber-500 hover:underline;
+}
+
+ul,
+ol {
+  list-style-position: outside;
+  gap: 0.3em;
+  @apply flex flex-col;
+}
 code[class*="language-"],
 pre[class*="language-"] {
   @apply rounded-xl;
