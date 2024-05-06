@@ -19,6 +19,6 @@ The purpose of this blog website is quiet a few actually,
 
 - Meself is a lazy procrastinator. I lose interest very quickly when things get boring and i believe that's the reason for so many unfinished side projects. Another purpose of this blog site is to teach myself to enjoy the boring too.
 
-I almost forgot to introduce myself. I am Yajat. I love software. I have been writing code half my life. Check out [the who page](www.yajatvishwakarma.com/whoami) to know more about me and [the now page](www.yajatvishwakarma.com/now) to see what i am currently doing.
+I almost forgot to introduce myself. I am Yajat. I love software. I have been writing code half my life. Check out [the who page](whoami) to know more about me and [the now page](now) to see what i am currently doing.
 
 That's about it I guess, I have nothing more to add to this blog. See you all soon!
