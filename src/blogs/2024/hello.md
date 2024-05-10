@@ -7,7 +7,8 @@ description: First blog ever! (Hopefully, I don't abandon this)
 ---
 
 Welcome guys!
-Those who know me, know this is long coming (3+ years) I always talk about how I want a portfolio website and how I built a gazzillion versions of it. But so some reason or another, never completed any of them.
+
+Those who know me, know this is long coming (3+ years) I always talk about how I want a portfolio website and how I built a gazzillion versions of it. But for some reason or another, never completed any of them.
 
 But! Here I am, finally committing to this one.
 
