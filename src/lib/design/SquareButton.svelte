@@ -1,7 +1,8 @@
 <script>
     export let classNames = "";
+    export let onClick = () => {};
 </script>
 
-<div class="btn btn-square btn-primary {classNames}">
+<button on:click={onClick} class="btn btn-square btn-primary {classNames}">
     <slot />
-</div>
+</button>
