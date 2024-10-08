@@ -3,37 +3,39 @@ export default {
   content: ["./src/**/*.{html,js,svelte,ts}"],
 
   theme: {
-    extend: {}
+    extend: {},
   },
 
   plugins: [require("daisyui")],
 
-  daisyui:{
+  daisyui: {
     themes: [
       {
-        mytheme: {
-          "primary": "#ffffff",
-          "secondary": "#ffffff",
-          "accent": "#ffffff",
-          "neutral": "#ffffff",
+        darkasstheme: {
+          primary: "#f5f5f4",
+          secondary: "#1E1E1E",
+          accent: "#3b82f6",
+          neutral: "#1c1c22",
           "base-100": "#000000",
-          "info": "#ff00ff",
-          "success": "#00ff00",
-          "warning": "#00ff00",
-          "error": "#ffff00",
+          info: "#7dd3fc",
+          success: "#86bf00",
+          warning: "#ffb500",
+          error: "#ff8481",
         },
-        mytheme2: {
-          "primary": "#00b0ff", 
-          "secondary": "#0093ff",
-          "accent": "#84a900",
-          "neutral": "#242424",
+
+        lightasstheme: {
+          primary: "#00b0ff",
+          secondary: "#0093ff",
+          accent: "#84a900",
+          neutral: "#242424",
           "base-100": "#effffa",
-          "info": "#0073d5",
-          "success": "#00b211",
-          "warning": "#ff9900",
-          "error": "#ff7292",
-        }
+          info: "#0073d5",
+          success: "#00b211",
+          warning: "#ff9900",
+          error: "#ff7292",
+        },
       },
-      "light"]
-  }
+      "light",
+    ],
+  },
 };

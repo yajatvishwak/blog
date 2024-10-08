@@ -1,3 +1,4 @@
 import { writable } from "svelte/store";
 
-export const isDarkModeEnabled = writable(true)
+export const isDarkModeDisabled = writable(false);
+export const isMenuOpened = writable(false);
