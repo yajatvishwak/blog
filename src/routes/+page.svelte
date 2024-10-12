@@ -1,5 +1,7 @@
 <script>
-  import Navbar from "../lib/components/Navbar.svelte";
+  import { subrouteName } from "../store/store";
+
+  $subrouteName = "whoami";
 </script>
 
 <div class="flex flex-col gap-4 mt-12">

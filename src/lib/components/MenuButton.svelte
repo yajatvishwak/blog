@@ -6,7 +6,7 @@
   }
 </script>
 
-<SquareButton onClick={toggleButton} classNames="btn-secondary">
+<SquareButton onClick={toggleButton} classNames="menutoggle btn-secondary">
   {#if $isMenuOpened}
     <svg
       xmlns="http://www.w3.org/2000/svg"
