@@ -18,6 +18,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@editorjs/editorjs": "^2.30.6",
+		"@editorjs/header": "^2.8.8",
+		"@editorjs/list": "^1.10.0",
 		"daisyui": "^4.12.12",
 		"moment": "^2.30.1"
 	}
