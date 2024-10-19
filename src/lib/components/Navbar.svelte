@@ -7,7 +7,7 @@
 </script>
 
 <div class="flex items-center justify-between w-full">
-  <div class="text-lg"><b>yajat</b> / {$subrouteName}</div>
+  <div class="text-lg"><a href="/"><b>yajat</b></a> / {$subrouteName}</div>
   <div class="flex gap-2">
     <ThemeSwitcherButton></ThemeSwitcherButton>
     <SearchButton></SearchButton>

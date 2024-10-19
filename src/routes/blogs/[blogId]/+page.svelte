@@ -2,10 +2,6 @@
   import moment from "moment";
   import GoBackButton from "../../../lib/components/GoBackButton.svelte";
   import NavMenu from "../../../lib/components/NavMenu.svelte";
-  import EditorJS from "@editorjs/editorjs";
-  import Header from "@editorjs/header";
-  import List from "@editorjs/list";
-  import { onMount } from "svelte";
   import Blog from "../../components/Blog.svelte";
   export let data;
 </script>
@@ -23,7 +19,7 @@
     </div>
     <div class="divider divider-secondary"></div>
   </div>
-  <div id="editorjs">
+  <div>
     <Blog />
   </div>
   <div class="flex flex-col">
