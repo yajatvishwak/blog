@@ -2,8 +2,10 @@
   import moment from "moment";
   import GoBackButton from "../../../lib/components/GoBackButton.svelte";
   import NavMenu from "../../../lib/components/NavMenu.svelte";
-  import Blog from "../../components/Blog.svelte";
+  import Blog from "../../../lib/components/Blog.svelte";
+  import { subrouteName } from "../../../store/store";
   export let data;
+  $subrouteName = "blogs";
 </script>
 
 <div class="flex flex-col my-12">

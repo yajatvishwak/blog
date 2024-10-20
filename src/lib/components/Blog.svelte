@@ -15,7 +15,7 @@
   import "highlight.js/styles/atom-one-dark.css";
   import rehypeHighlight from "rehype-highlight";
 
-  let md = "```typescript\nconsole.log('Hello, world!');\n```";
+  export let md = "";
 </script>
 
 <div class="w-full h-full">

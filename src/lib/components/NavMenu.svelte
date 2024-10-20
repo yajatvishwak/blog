@@ -10,7 +10,6 @@
       { selected: false, title: "now", href: "/now" },
     ],
     blog: [
-      { selected: false, title: "thoughts", href: "/blogs/thoughts" },
       { selected: false, title: "experiences", href: "/blogs/experiences" },
       { selected: false, title: "learnings", href: "/blogs/learnings" },
     ],

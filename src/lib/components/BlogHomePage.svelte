@@ -26,7 +26,9 @@
   <div class="mt-2 divider divider-secondary"></div>
   {#each listOfBlogs[year] as blog}
     <a href={"/blogs/" + blog.blogId} class="cursor-pointer group">
-      <div class="flex items-center justify-between">
+      <div
+        class="flex items-center justify-between text-xs md:text-sm lg:text-base"
+      >
         <div>
           <div class="text-lg font-bold">{blog.blogTitle}</div>
           <div class="flex gap-4 mt-2">
@@ -44,7 +46,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-6"
+            class="opacity-0 size-6 lg:opacity-100"
           >
             <path
               stroke-linecap="round"

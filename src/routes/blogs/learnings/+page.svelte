@@ -1,6 +1,6 @@
 <script>
   import { subrouteName } from "../../../store/store";
-  import BlogHomePage from "../../components/BlogHomePage.svelte";
+  import BlogHomePage from "../../../lib/components/BlogHomePage.svelte";
   $subrouteName = "blogs";
 
   let listOfBlogs = {
