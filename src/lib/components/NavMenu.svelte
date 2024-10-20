@@ -9,7 +9,7 @@
       { selected: false, title: "milestones", href: "/milestones" },
       { selected: false, title: "now", href: "/now" },
     ],
-    browse: [
+    blog: [
       { selected: false, title: "thoughts", href: "/blogs/thoughts" },
       { selected: false, title: "experiences", href: "/blogs/experiences" },
       { selected: false, title: "learnings", href: "/blogs/learnings" },
@@ -40,9 +40,9 @@
       </div>
     </div>
     <div>
-      <div class="font-bold">Browse</div>
+      <div class="font-bold">Blog</div>
       <div class="flex flex-col gap-1 mt-2 group">
-        {#each menus.browse as info}
+        {#each menus.blog as info}
           <a
             on:click={() => ($isMenuOpened = false)}
             class="transition-all opacity-50 hover:opacity-100"
