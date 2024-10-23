@@ -1,1 +1,1 @@
-hello this is purpose
+this is purpose
