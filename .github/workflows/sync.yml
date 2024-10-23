@@ -1,0 +1,47 @@
+name: Sync Repo Files
+
+on:
+  push:
+    branches:
+      - blogs
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: blogs
+          fetch-depth: 0 # Ensure full history is fetched for git diff
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check for changed files using Git
+        id: diff
+        run: |
+          git fetch origin blogs
+          # Check for changed or new files since the last commit
+          git diff --name-only HEAD^ HEAD > changed_files.txt
+          echo "changed_files=$(cat changed_files.txt)" >> $GITHUB_ENV
+
+    #   - name: Process changed files
+    #     run: |
+    #       node processFiles.js
+
+    #   - name: Upload to Cloudflare R2
+    #     run: node uploadToR2.js
+
+    #   - name: Upsert into Supabase
+    #     run: node upsertSupabase.js
+
+    #   - name: Clean up
+    #     run: rm -rf repo/ changed_files.txt
