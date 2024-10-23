@@ -1,5 +1,5 @@
 ---
-blogid: jugaad-osriented-programming1
+blogid: Find Peak Element
 date: 02/03/2024
 ---
 
@@ -53,6 +53,8 @@ Problems:
 2. Max(arr) is the answer, why even do binary search?
 
 We can fix the feasibility function so that it remains in constant time. To do that we need to check if the current element is bigger than the next element
+
+So the feasibility function would rather look something like - [T,T,F,F,F]
 
 ```python
 def feasible(index):
