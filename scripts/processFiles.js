@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
+const readingTime = require("reading-time");
 
 // Path to changed_files.txt (assuming it's stored in the $HOME or workspace directory)
 const homeDir = process.env.HOME || process.env.USERPROFILE; // Handles Linux/Windows
@@ -18,9 +19,11 @@ async function processFiles() {
       try {
         const fileContent = fs.readFileSync(file, "utf-8");
         const frontmatter = matter(fileContent).data;
+        const stats = readingTime(fileContent);
 
         console.log(`Processing file: ${file}`);
         console.log(`Frontmatter:`, frontmatter);
+        console.log(`Words:`, stats.words.total);
 
         // Save or pass frontmatter for later upserting into Supabase
         // Save content for Cloudflare R2 upload

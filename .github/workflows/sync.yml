@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Validations
+        run: npm test
+
       - name: Check for changed files using Git
         id: diff
         run: git fetch origin blogs && git diff --name-only HEAD^ HEAD > $HOME/changed_files.txt && echo "changed_files=$(cat $HOME/changed_files.txt)"

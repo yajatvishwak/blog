@@ -8,6 +8,12 @@ const isValidDate = (date) => {
   return dateRegex.test(date);
 };
 
+// Helper function to check if blogid is URL-safe
+const isUrlSafe = (id) => {
+  const urlSafeRegex = /^[a-zA-Z0-9-_]+$/;
+  return urlSafeRegex.test(id);
+};
+
 // Main function to traverse files and check blogids and dates
 const checkBlogFiles = (dirPath) => {
   const blogIds = new Set();
@@ -53,6 +59,13 @@ const checkBlogFiles = (dirPath) => {
       );
     } else {
       blogIds.add(blogId);
+    }
+
+    // Check if the blogid is URL-safe
+    if (!isUrlSafe(blogId)) {
+      errors.push(
+        `- Error: Invalid blogid "${blogId}" in file: ${file}. Blogid should only contain alphanumeric characters, dashes (-), and underscores (_).`
+      );
     }
 
     // Check if the date is valid

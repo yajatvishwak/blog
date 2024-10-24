@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import path from "path";
-import checkBlogFiles from "../checkblogfiles.js";
+import checkBlogFiles from "../scripts/checkblogfiles.js";
 
 describe("checkBlogFiles", () => {
   it("checking blog ids and dates", () => {
