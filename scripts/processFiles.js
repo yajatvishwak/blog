@@ -5,8 +5,7 @@ const matter = require("gray-matter");
 // Path to changed_files.txt (assuming it's stored in the $HOME or workspace directory)
 const homeDir = process.env.HOME || process.env.USERPROFILE; // Handles Linux/Windows
 const filePath = path.join(homeDir, "changed_files.txt");
-console.log("the home  is", process.env.HOME);
-console.log("the process env is", process.env);
+
 // Read the changed_files.txt to get the list of changed files
 const changedFiles = fs
   .readFileSync(filePath, "utf-8")

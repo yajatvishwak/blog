@@ -1,5 +1,5 @@
 ---
-blogid: Find Peak Element
+blogid: Find-Peak-Element
 date: 02/03/2024
 ---
 
