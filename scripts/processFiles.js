@@ -1,9 +1,9 @@
 const fs = require("fs");
 const matter = require("gray-matter");
 
-const changedFiles = process.env.changed_files
-  .split("\n")
-  .filter((f) => f.trim());
+const changedFiles = process.env.CHANGED_FILES.split("\n").filter((f) =>
+  f.trim()
+);
 
 async function processFiles() {
   for (const file of changedFiles) {
