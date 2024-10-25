@@ -33,6 +33,9 @@ jobs:
         run: git fetch origin blogs && git diff --name-only HEAD^ HEAD > $HOME/changed_files.txt && echo "changed_files=$(cat $HOME/changed_files.txt)"
 
       - name: Process changed files
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: node scripts/processFiles.js
 
     #   - name: Upload to Cloudflare R2
