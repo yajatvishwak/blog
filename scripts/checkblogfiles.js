@@ -1,6 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-const matter = require("gray-matter");
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+
+const allowedTypes = ["learnings", "experience"];
 
 // Helper function to check if a date is in dd/mm/yyyy format
 const isValidDate = (date) => {
@@ -14,7 +16,14 @@ const isUrlSafe = (id) => {
   return urlSafeRegex.test(id);
 };
 
-// Main function to traverse files and check blogids and dates
+// Helper function to check if tags are in a valid format
+const isValidTags = (tags) => {
+  // Tags can be a single tag or a comma-separated list of tags
+  const tagsRegex = /^([a-zA-Z0-9-_]+)(,[a-zA-Z0-9-_]+)*$/;
+  return tagsRegex.test(tags);
+};
+
+// Main function to traverse files and check blogids, dates, and tags
 const checkBlogFiles = (dirPath) => {
   const blogIds = new Set();
   const markdownFiles = [];
@@ -46,9 +55,11 @@ const checkBlogFiles = (dirPath) => {
 
     const blogId = data?.blogid;
     const date = data?.date;
+    const tags = data?.tags;
+    const type = data?.type;
 
-    if (!blogId || !date) {
-      errors.push(`- Error: blogid or date not found in file: ${file}`);
+    if (!blogId || !date || !tags) {
+      errors.push(`- Error: blogid, date, or tags not found in file: ${file}`);
       return;
     }
 
@@ -74,15 +85,29 @@ const checkBlogFiles = (dirPath) => {
         `- Error: Invalid date format in file: ${file}. Found: ${date}`
       );
     }
+
+    // Check if the tags field exists and is in a valid format
+    if (!isValidTags(tags)) {
+      errors.push(
+        `- Error: Invalid tags format in file: ${file}. Tags should be a single tag or a comma-separated list of tags.`
+      );
+    }
+
+    // Check if type is either "learnings" or "experience"
+    if (!allowedTypes.includes(type)) {
+      errors.push(
+        `- Error: Invalid type "${type}" in file: ${file}. Type should be either "learnings" or "experience".`
+      );
+    }
   });
 
   if (errors.length > 0) {
-    return `Blog ID and date checks completed with the following issues:\n\n${errors.join(
+    return `Blog ID, date, and tags checks completed with the following issues:\n\n${errors.join(
       "\n"
     )}`;
   }
 
-  return "Blog ID and date checks completed.";
+  return true;
 };
 
-module.exports = checkBlogFiles;
+export default checkBlogFiles;
