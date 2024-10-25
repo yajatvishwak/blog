@@ -9,7 +9,6 @@ import insertIntoSupabase from "./insertIntoSupabase.js";
 const homeDir = process.env.HOME;
 const filePath = path.join(homeDir, "changed_files.txt");
 
-// Read the changed_files.txt to get the list of changed files
 const changedFiles = fs
   .readFileSync(filePath, "utf-8")
   .split("\n")
