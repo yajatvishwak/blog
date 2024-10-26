@@ -6,3 +6,5 @@ type: learnings
 ---
 
 gomma12adssdas
+
+![image info](/upload/images/test.jpeg)

@@ -5,6 +5,7 @@ import readingTime from "reading-time";
 
 import uploadToR2 from "./uploadToR2.js";
 import insertIntoSupabase from "./insertIntoSupabase.js";
+import handleImages from "./handleImages.js";
 
 const homeDir = process.env.HOME;
 const filePath = path.join(homeDir, "changed_files.txt");
@@ -18,12 +19,15 @@ async function processFiles() {
   for (const file of changedFiles) {
     if (file.endsWith(".md")) {
       try {
-        const fileContent = fs.readFileSync(file, "utf-8");
+        let fileContent = fs.readFileSync(file, "utf-8");
         const frontmatter = matter(fileContent).data;
         const stats = readingTime(fileContent);
         const blogid = frontmatter.blogid;
         const blogType = frontmatter.type;
         const tags = frontmatter.tags.split(",");
+
+        // call handleImages
+        fileContent = handleImages(fileContent);
 
         const formattedFilename = `${blogid}_${file.substring(
           file.lastIndexOf("/") + 1

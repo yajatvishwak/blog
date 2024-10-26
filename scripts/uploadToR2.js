@@ -3,8 +3,7 @@ import axios from "axios";
 async function uploadToR2(filename, fileContent) {
   const fd = new FormData();
 
-  // Convert file content to Blob with Markdown MIME type
-  const blob = new Blob([fileContent], { type: "text/markdown" });
+  const blob = new Blob([fileContent], { type: "application/octet-stream" });
 
   // Append the file and the filename to the form data
   fd.append("filename", filename);
