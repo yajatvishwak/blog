@@ -11,7 +11,11 @@ async function uploadToR2(filename, fileContent) {
   fd.append("file", blob, filename);
 
   try {
-    await axios.post(process.env.R2_UPLOAD_API, fd);
+    await axios.post(process.env.R2_UPLOAD_API, fd, {
+      headers: {
+        "upload-key": process.env.R2_UPLOAD_KEY,
+      },
+    });
     console.log("File uploaded successfully:", filename);
   } catch (error) {
     console.error("Error uploading file:", error);
