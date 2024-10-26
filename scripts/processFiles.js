@@ -22,6 +22,7 @@ async function processFiles() {
         const frontmatter = matter(fileContent).data;
         const stats = readingTime(fileContent);
         const blogid = frontmatter.blogid;
+        const blogType = frontmatter.type;
         const tags = frontmatter.tags.split(",");
 
         const formattedFilename = `${blogid}_${file.substring(
