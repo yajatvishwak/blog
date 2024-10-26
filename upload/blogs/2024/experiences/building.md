@@ -5,4 +5,4 @@ tags: work,jugaad
 type: learnings
 ---
 
-gomma1
+gomma12
