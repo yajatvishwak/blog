@@ -2,15 +2,18 @@ import axios from "axios";
 
 async function uploadToR2(filename, fileContent) {
   const fd = new FormData();
+
+  // Convert file content to Blob with Markdown MIME type
+  const blob = new Blob([fileContent], { type: "text/markdown" });
+
   // Append the file and the filename to the form data
-  console.log(fileContent);
   fd.append("filename", filename);
-  fd.append("file", fileContent, filename);
+  fd.append("file", blob, filename);
 
   try {
-    await axios.post("https://api.yajatvishwakarma.com/upload-blog-file", fd, {
+    await axios.post(process.env.R2_UPLOAD_API, fd, {
       headers: {
-        ...fd.getHeaders(),
+        ...fd.getHeaders(), // Only necessary in Node.js environments
       },
     });
     console.log("File uploaded successfully:", filename);
