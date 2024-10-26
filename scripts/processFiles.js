@@ -32,8 +32,6 @@ async function processFiles() {
 
         await uploadToR2(formattedFilename, fileContent);
 
-        console.log(`Uploaded to R2: ${file}`);
-
         await insertIntoSupabase(
           formattedFilename,
           tags,

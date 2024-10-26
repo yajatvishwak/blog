@@ -14,6 +14,7 @@ async function uploadToR2(filename, fileContent) {
     await axios.post(process.env.R2_UPLOAD_API, fd, {
       headers: {
         "upload-key": process.env.R2_UPLOAD_KEY,
+        "Content-Type": "multipart/form-data",
       },
     });
     console.log("File uploaded successfully:", filename);
