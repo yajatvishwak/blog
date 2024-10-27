@@ -15,8 +15,9 @@ function handleImages(fileContent) {
       fs.readFileSync(path.join(imageDirectoryPath, imageFilename))
     );
     const imageLink = `https://files.yajatvishwakarma.com/${imageFilename}`;
-    fileContent.replace(imagePath, imageLink);
+    fileContent = fileContent.replace(imagePath, imageLink);
   }
+  console.log(`Images processed`);
   return fileContent;
 }
 export default handleImages;
