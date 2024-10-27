@@ -8,7 +8,7 @@ function handleImages(fileContent) {
   while ((match = imageRegex.exec(fileContent)) !== null) {
     let imagePath = match[1];
     let imageFilename = imagePath.substring(imagePath.indexOf("/") + 1);
-    const imageDirectoryPath = path.join(__dirname, "..", "upload", "images");
+    const imageDirectoryPath = path.join("upload", "images");
 
     uploadToR2(
       imageFilename,
