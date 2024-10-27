@@ -7,4 +7,4 @@ type: learnings
 
 gomma12adssdas
 
-![diyadd](/upload/images/test.jpeg)
+![diyadddd](/upload/images/test.jpeg)
