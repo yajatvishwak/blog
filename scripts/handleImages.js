@@ -17,6 +17,8 @@ function handleImages(fileContent) {
       console.log("Files:", process.cwd());
     });
     const imageDirectoryPath = path.join("upload", "images");
+    console.log("Image filename:", imageFilename);
+    console.log("full path", path.join(imageDirectoryPath, imageFilename));
 
     uploadToR2(
       imageFilename,
