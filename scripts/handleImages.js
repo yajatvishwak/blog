@@ -7,7 +7,7 @@ function handleImages(fileContent) {
   let match;
   while ((match = imageRegex.exec(fileContent)) !== null) {
     let imagePath = match[1];
-    let imageFilename = imagePath.substring(imagePath.indexOf("/") + 1);
+    let imageFilename = imagePath.substring(imagePath.lastIndexOf("/") + 1);
     fs.readdir(".", (err, files) => {
       if (err) {
         console.error(`Error: ${err.message}`);
