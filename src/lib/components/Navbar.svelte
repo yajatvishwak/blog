@@ -10,7 +10,7 @@
   <div class="text-lg"><a href="/"><b>yajat</b></a> / {$subrouteName}</div>
   <div class="flex gap-2">
     <ThemeSwitcherButton></ThemeSwitcherButton>
-    <SearchButton></SearchButton>
+    <!-- <SearchButton></SearchButton> -->
     <MenuButton></MenuButton>
   </div>
 </div>
