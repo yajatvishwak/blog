@@ -1,13 +1,13 @@
 <script>
-  import SquareButton from "../design/SquareButton.svelte";
   import { isDarkModeDisabled } from "../../store/store";
+  import Button from "../design/Button.svelte";
 
   function toggleMode() {
     $isDarkModeDisabled = !$isDarkModeDisabled;
   }
 </script>
 
-<SquareButton onClick={toggleMode} classNames="btn-secondary">
+<Button onClick={toggleMode} classNames="bg-transparent">
   <input
     hidden
     bind:checked={$isDarkModeDisabled}
@@ -44,4 +44,4 @@
       />
     </svg>
   {/if}
-</SquareButton>
+</Button>
