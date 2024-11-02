@@ -18,8 +18,8 @@ const changedFiles = fs
 
 async function uploadWhatsnewOrPurpose() {
   console.log(process.cwd());
-  const purposeFilePath = path.join(homeDir, "uploads", "purpose.md");
-  const whatsnewFilePath = path.join(homeDir, "uploads", "whatsnew.md");
+  const purposeFilePath = path.join(__dirname, "uploads", "purpose.md");
+  const whatsnewFilePath = path.join(__dirname, "uploads", "whatsnew.md");
   try {
     const purposefileContent = fs.readFileSync(purposeFilePath, "utf-8");
     const whatsnewfileContent = fs.readFileSync(whatsnewFilePath, "utf-8");
