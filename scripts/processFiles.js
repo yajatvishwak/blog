@@ -17,6 +17,7 @@ const changedFiles = fs
   .filter((f) => f.trim());
 
 async function uploadWhatsnewOrPurpose() {
+  console.log(process.cwd());
   const purposeFilePath = path.join(homeDir, "uploads", "purpose.md");
   const whatsnewFilePath = path.join(homeDir, "uploads", "whatsnew.md");
   try {
