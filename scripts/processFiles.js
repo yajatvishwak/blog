@@ -10,10 +10,15 @@ import handleImages from "./handleImages.js";
 const homeDir = process.env.HOME;
 const filePath = path.join(homeDir, "changed_files.txt");
 
+// Read and filter changed files
 const changedFiles = fs
   .readFileSync(filePath, "utf-8")
   .split("\n")
   .filter((f) => f.trim());
+
+// Define the path to purpose.md
+const purposeFilePath = path.join(homeDir, "uploads", "purpose.md");
+const whatsnewFilePath = path.join(homeDir, "uploads", "whatsnew.md");
 
 async function processFiles() {
   for (const file of changedFiles) {
@@ -27,12 +32,10 @@ async function processFiles() {
         const title = frontmatter.title;
         const tags = frontmatter.tags.split(",");
 
-        // call handleImages
+        // Handle images within the content
         fileContent = handleImages(fileContent);
 
-        const formattedFilename = `${blogid}_${file.substring(
-          file.lastIndexOf("/") + 1
-        )}`;
+        const formattedFilename = `${blogid}_${path.basename(file)}`;
 
         console.log(`Processing file: ${file}`);
         console.log(`Stats: ${stats.words}`);
@@ -51,6 +54,23 @@ async function processFiles() {
         console.error(`Error processing file: ${file}`, error);
       }
     }
+  }
+
+  // Always upload purpose.md and whatsnew.md
+  try {
+    const purposefileContent = fs.readFileSync(purposeFilePath, "utf-8");
+    const whatsnewfileContent = fs.readFileSync(whatsnewFilePath, "utf-8");
+
+    console.log(
+      `Processing purpose.md & whatsnew.md file: ${purposeFilePath} & ${whatsnewFilePath}`
+    );
+
+    await uploadToR2("purpose.md", purposefileContent);
+    await uploadToR2("whatsnew.md", whatsnewfileContent);
+
+    console.log("purpose.md & whatsnew.md has been uploaded successfully.");
+  } catch (error) {
+    console.error(`Error processing purpose.md: ${purposeFilePath}`, error);
   }
 }
 
