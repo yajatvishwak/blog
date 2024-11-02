@@ -1,13 +1,9 @@
 <script>
-  import { browser } from "$app/environment";
-
-  function goback() {
-    if (browser) window.history.back();
-  }
+  import { lastVisited } from "../../store/store";
 </script>
 
-<button
-  on:click={() => goback()}
+<a
+  href="/blogs/{$lastVisited}"
   class="flex items-center gap-2 transition-all opacity-50 cursor-pointer hover:opacity-100"
 >
   <div>
@@ -27,4 +23,4 @@
     </svg>
   </div>
   <div>Go back to all blogs</div>
-</button>
+</a>

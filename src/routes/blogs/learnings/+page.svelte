@@ -1,7 +1,8 @@
 <script>
-  import { subrouteName } from "../../../store/store";
+  import { lastVisited, subrouteName } from "../../../store/store";
   import BlogHomePage from "../../../lib/components/BlogHomePage.svelte";
   $subrouteName = "blogs";
+  $lastVisited = "learnings";
 
   let listOfBlogs = {
     2024: [
