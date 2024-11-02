@@ -3,7 +3,7 @@ blogid: jugaad-oriented-programming
 date: 02/03/2024
 tags: work,jugaad
 type: learnings
-title: Jugaad1asd
+title: Jugaad
 ---
 
 Recently at work, I was assigned to solve a bug that had been lingering for a while. We were plotting a chart and needed to highlight the highest peak using D3.js. The values for the chart came from a different service, which, according to the team responsible, had been thoroughly tested. Yet, when the values were plotted by that service, the peaks were highlighted correctly. However, when the same data was passed over to our UI that used D3.js, the plot was wrong. Same values. Different results. **How?**
