@@ -12,17 +12,21 @@
   <GoBackButton></GoBackButton>
   <div class="flex flex-col gap-4 mt-4">
     <div class="text-5xl">{data.blogTitle}</div>
-    <div class="flex gap-4">
+    <div class="flex flex-col w-full gap-1 lg:gap-4 lg:flex-row">
       <div>{moment(data.date).format("MMMM Do, YYYY")}</div>
-      <div>•</div>
+      <div class="hidden lg:inline">•</div>
       <div>{data.words} words</div>
-      <div>•</div>
-      <div>{data.tags}</div>
+      <div class="hidden lg:inline">•</div>
+      <div class="flex flex-wrap gap-2">
+        {#each data.tags as tags}
+          <span class="badge badge-secondary badge-lg">{tags}</span>
+        {/each}
+      </div>
     </div>
     <div class="divider divider-secondary"></div>
   </div>
   <div>
-    <Blog />
+    <Blog blogLink={data.objectLink} />
   </div>
   <div class="flex flex-col">
     <div class="divider divider-secondary"></div>
