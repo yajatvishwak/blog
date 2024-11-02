@@ -80,7 +80,7 @@ async function insertBlog(blogid, words, filename, blogType, title) {
     words: words,
     object_link: `https://files.yajatvishwakarma.com/${filename}`,
     type: blogType,
-    title: title,
+    blog_title: title,
   });
   if (error) throw error;
   console.log(
@@ -94,7 +94,7 @@ async function updateBlog(blog, blogid, words, filename, blogType, title) {
   blog.object_link = `https://files.yajatvishwakarma.com/${filename}`;
   blog.words = words;
   blog.type = blogType;
-  blog.title = title;
+  blog.blog_title = title;
   const { error } = await supabase
     .from("blogs")
     .update(blog)
