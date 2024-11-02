@@ -42,7 +42,7 @@ async function processFiles() {
         await insertIntoSupabase(
           formattedFilename,
           tags,
-          stats.words.total,
+          stats.words,
           blogid,
           blogType,
           title
