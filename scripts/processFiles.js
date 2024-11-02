@@ -35,7 +35,7 @@ async function processFiles() {
         )}`;
 
         console.log(`Processing file: ${file}`);
-        console.log(`Stats: ${stats}`);
+        console.log(`Stats: ${stats.words}`);
 
         await uploadToR2(formattedFilename, fileContent);
 
