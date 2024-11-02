@@ -36,10 +36,10 @@
   <div class="divider"></div>
   <div class="font-bold">Purpose</div>
   <div>
-    <Blog md={purpose}></Blog>
+    <Blog blogLink={"https://files.yajatvishwakarma.com/purpose.md"}></Blog>
   </div>
   <div class="divider"></div>
 
   <div class="font-bold">What's new?</div>
-  <Blog md={whatsnew}></Blog>
+  <Blog blogLink={"https://files.yajatvishwakarma.com/whatsnew.md"}></Blog>
 </div>
