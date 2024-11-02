@@ -24,6 +24,7 @@ async function processFiles() {
         const stats = readingTime(fileContent);
         const blogid = frontmatter.blogid;
         const blogType = frontmatter.type;
+        const title = frontmatter.title;
         const tags = frontmatter.tags.split(",");
 
         // call handleImages
@@ -42,7 +43,8 @@ async function processFiles() {
           tags,
           stats.words.total,
           blogid,
-          blogType
+          blogType,
+          title
         );
       } catch (error) {
         console.error(`Error processing file: ${file}`, error);

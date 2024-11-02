@@ -57,9 +57,12 @@ const checkBlogFiles = (dirPath) => {
     const date = data?.date;
     const tags = data?.tags;
     const type = data?.type;
+    const title = data?.title;
 
-    if (!blogId || !date || !tags) {
-      errors.push(`- Error: blogid, date, or tags not found in file: ${file}`);
+    if (!blogId || !date || !tags || !title) {
+      errors.push(
+        `- Error: blogid, date, title, or tags not found in file: ${file}`
+      );
       return;
     }
 

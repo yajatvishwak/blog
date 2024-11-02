@@ -5,7 +5,14 @@ const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-async function insertToSupabase(filename, tags, words, blogid, blogType) {
+async function insertToSupabase(
+  filename,
+  tags,
+  words,
+  blogid,
+  blogType,
+  title
+) {
   const { data, error } = await supabase
     .from("blogs")
     .select()
@@ -14,9 +21,9 @@ async function insertToSupabase(filename, tags, words, blogid, blogType) {
   let blog = data.at(0);
   console.log("Trying to find the blog: ", blog);
   if (blog && blog.blog_id) {
-    await updateBlog(blog, blogid, words, filename, blogType);
+    await updateBlog(blog, blogid, words, filename, blogType, title);
   } else {
-    await insertBlog(blogid, words, filename, blogType);
+    await insertBlog(blogid, words, filename, blogType, title);
   }
 
   const tagIds = await insertUniqueTags(tags);
@@ -67,12 +74,13 @@ async function insertUniqueTags(tags) {
   }
 }
 
-async function insertBlog(blogid, words, filename, blogType) {
+async function insertBlog(blogid, words, filename, blogType, title) {
   const { error } = await supabase.from("blogs").insert({
     blog_id: blogid,
     words: words,
     object_link: `https://files.yajatvishwakarma.com/${filename}`,
     type: blogType,
+    title: title,
   });
   if (error) throw error;
   console.log(
@@ -82,10 +90,11 @@ async function insertBlog(blogid, words, filename, blogType) {
   );
 }
 
-async function updateBlog(blog, blogid, words, filename, blogType) {
+async function updateBlog(blog, blogid, words, filename, blogType, title) {
   blog.object_link = `https://files.yajatvishwakarma.com/${filename}`;
   blog.words = words;
   blog.type = blogType;
+  blog.title = title;
   const { error } = await supabase
     .from("blogs")
     .update(blog)
