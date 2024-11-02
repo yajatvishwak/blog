@@ -24,6 +24,6 @@ body {
 
   p,
   li {
-    @apply text-lg tracking-wide opacity-80;
+    @apply py-1 text-lg tracking-wide opacity-80;
   }
 }
