@@ -5,7 +5,11 @@ export default {
   theme: {
     extend: {},
   },
-
+  safelist: [
+    {
+      pattern: /hljs+/,
+    },
+  ],
   plugins: [require("daisyui")],
 
   daisyui: {
