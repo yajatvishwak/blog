@@ -1,2 +1,4 @@
-- work in progress
-- AHHHHHHHH
+- This portfolio/blog platform is still work in progress, there's a lot of things that are broken
+- Added all the blogs, [Experience Blogs](https://yajatvishwakarma.com/blogs/experiences) and [Learning Blogs](https://yajatvishwakarma.com/blogs/learnings) are finally complete
+- UI fixes on blog pages are complete
+- Posted to X and LinkedIn first time! YAY!!!
