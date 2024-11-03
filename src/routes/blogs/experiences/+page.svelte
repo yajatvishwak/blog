@@ -4,21 +4,11 @@
   $subrouteName = "blogs";
   $lastVisited = "experiences";
 
-  let listOfBlogs = {
-    2024: [
-      {
-        blogId: "test",
-        blogTitle: "test",
-        tags: ["leetcode"],
-        words: 233,
-        date: "May 4th, 2023",
-      },
-    ],
-  };
+  export let data;
 </script>
 
 <BlogHomePage
   title="experiences"
   subtitle="things that i felt were cool to share"
-  {listOfBlogs}
+  listOfBlogs={data}
 ></BlogHomePage>

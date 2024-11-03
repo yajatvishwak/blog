@@ -8,12 +8,13 @@
     {
       rehypePlugin: [
         rehypeHighlight,
-        { ignoreMissing: true, languages: { typescript } },
+        { ignoreMissing: true, languages: { typescript, python } },
       ],
     },
   ];
 
   import typescript from "highlight.js/lib/languages/typescript";
+  import python from "highlight.js/lib/languages/python";
   import "highlight.js/styles/atom-one-dark.css";
   import rehypeHighlight from "rehype-highlight";
   import { fade } from "svelte/transition";
@@ -41,6 +42,8 @@
   {#if loading}
     <div class="loading loading-infinity"></div>
   {:else}
-    <div in:fade={{ delay: 500 }} out:fade><Markdown {md} {plugins} /></div>
+    <div class="blog" in:fade={{ delay: 500 }} out:fade>
+      <Markdown {md} {plugins} />
+    </div>
   {/if}
 </div>
