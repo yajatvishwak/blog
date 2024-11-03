@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { config } from "dotenv";
+import moment from "moment";
 config();
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
@@ -11,7 +12,8 @@ async function insertToSupabase(
   words,
   blogid,
   blogType,
-  title
+  title,
+  date
 ) {
   const { data, error } = await supabase
     .from("blogs")
@@ -21,9 +23,9 @@ async function insertToSupabase(
   let blog = data.at(0);
   console.log("Trying to find the blog: ", blog);
   if (blog && blog.blog_id) {
-    await updateBlog(blog, blogid, words, filename, blogType, title);
+    await updateBlog(blog, blogid, words, filename, blogType, title, date);
   } else {
-    await insertBlog(blogid, words, filename, blogType, title);
+    await insertBlog(blogid, words, filename, blogType, title, date);
   }
 
   const tagIds = await insertUniqueTags(tags);
@@ -74,13 +76,14 @@ async function insertUniqueTags(tags) {
   }
 }
 
-async function insertBlog(blogid, words, filename, blogType, title) {
+async function insertBlog(blogid, words, filename, blogType, title, date) {
   const { error } = await supabase.from("blogs").insert({
     blog_id: blogid,
     words: words,
     object_link: `https://files.yajatvishwakarma.com/${filename}`,
     type: blogType,
     blog_title: title,
+    created_at: moment(date, "DD/MM/YYYY").toDate(),
   });
   if (error) throw error;
   console.log(
@@ -90,11 +93,20 @@ async function insertBlog(blogid, words, filename, blogType, title) {
   );
 }
 
-async function updateBlog(blog, blogid, words, filename, blogType, title) {
+async function updateBlog(
+  blog,
+  blogid,
+  words,
+  filename,
+  blogType,
+  title,
+  date
+) {
   blog.object_link = `https://files.yajatvishwakarma.com/${filename}`;
   blog.words = words;
   blog.type = blogType;
   blog.blog_title = title;
+  blog.created_at = moment(date, "DD/MM/YYYY").toDate();
   const { error } = await supabase
     .from("blogs")
     .update(blog)

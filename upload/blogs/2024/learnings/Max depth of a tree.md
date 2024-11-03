@@ -3,7 +3,7 @@ blogid: max-depth-of-tree
 date: 10/08/2024
 tags: leetcode
 type: learnings
-title: Leetcode | Max depth of a tree
+title: Max depth of a tree
 ---
 
 #### Problem

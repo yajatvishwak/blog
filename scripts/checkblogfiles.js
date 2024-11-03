@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const allowedTypes = ["learnings", "experience"];
+const allowedTypes = ["learnings", "experiences"];
 
 // Helper function to check if a date is in dd/mm/yyyy format
 const isValidDate = (date) => {

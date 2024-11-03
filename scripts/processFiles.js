@@ -53,6 +53,7 @@ async function processFiles() {
           const blogType = frontmatter.type;
           const title = frontmatter.title;
           const tags = frontmatter.tags.split(",");
+          const date = frontmatter.date;
 
           // Handle images within the content
           fileContent = handleImages(fileContent);
@@ -70,7 +71,8 @@ async function processFiles() {
             stats.words,
             blogid,
             blogType,
-            title
+            title,
+            date
           );
         }
       } catch (error) {

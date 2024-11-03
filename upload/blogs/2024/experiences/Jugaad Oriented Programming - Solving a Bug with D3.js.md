@@ -2,7 +2,7 @@
 blogid: jugaad-oriented-programming
 date: 10/08/2023
 tags: work
-type: learnings
+type: experiences
 title: Jugaad Oriented programming
 ---
 

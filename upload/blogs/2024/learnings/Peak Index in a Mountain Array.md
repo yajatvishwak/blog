@@ -3,7 +3,7 @@ blogid: find-peak-element
 date: 10/08/2024
 tags: leetcode
 type: learnings
-title: Leetcode | Find Peak Element
+title: Find Peak Element
 ---
 
 #### Problem:

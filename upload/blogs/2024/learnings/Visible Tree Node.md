@@ -3,7 +3,7 @@ blogid: visible-tree-node
 date: 10/08/2024
 tags: leetcode
 type: learnings
-title: Leetcode | Visible Tree Node
+title: Visible Tree Node
 ---
 
 #### Problem
