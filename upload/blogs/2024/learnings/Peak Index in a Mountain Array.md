@@ -1,9 +1,9 @@
 ---
-blogid: Find-Peak-Element
-date: 02/03/2024
-tags: work
-title: heheh
+blogid: find-peak-element
+date: 10/08/2024
+tags: leetcode
 type: learnings
+title: Leetcode | Find Peak Element
 ---
 
 #### Problem:

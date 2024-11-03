@@ -1,9 +1,9 @@
 ---
-blogid: jugaad-oriented-sprogramming1
-date: 02/03/2024
-tags: work
+blogid: visible-tree-node
+date: 10/08/2024
+tags: leetcode
 type: learnings
-title: heheheh
+title: Leetcode | Visible Tree Node
 ---
 
 #### Problem
