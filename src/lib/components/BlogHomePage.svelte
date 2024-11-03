@@ -12,7 +12,7 @@
 </script>
 
 <div class="flex items-center justify-between">
-  <div class="flex flex-col">
+  <div class="flex flex-col flex-1">
     <div class="text-2xl font-extrabold">{title}</div>
     <div class="opacity-65">{subtitle}</div>
   </div>
