@@ -26,7 +26,7 @@
     <div class="divider divider-secondary"></div>
   </div>
   <div>
-    <Blog blogLink={data.objectLink} />
+    <Blog blogText={data.blogText} />
   </div>
   <div class="flex flex-col">
     <div class="divider divider-secondary"></div>
