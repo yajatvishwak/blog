@@ -15,7 +15,12 @@ export const load = async ({ params }) => {
   if (status === 200) {
     let { blog } = data;
     blog = blog[0];
-    console.log(blog);
+    //console.log(blog);
+    const { data : blogText } = await axios.get(blog.object_link).catch(() => {
+      error(404, { message: "not found" });
+    });
+    
+
     return {
       blogId: blogId,
       blogTitle: blog.blog_title,
@@ -23,6 +28,7 @@ export const load = async ({ params }) => {
       tags: blog.tags,
       date: blog.created_at,
       objectLink: blog.object_link,
+      blogText
     };
   }
 };

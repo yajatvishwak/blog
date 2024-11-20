@@ -1,19 +1,8 @@
 <script>
   import Blog from "../lib/components/Blog.svelte";
   import { subrouteName } from "../store/store";
-
+  export let data;
   $subrouteName = "whoami";
-
-  let purpose = `I set out to build a website, not just as a digital journal of my experiences
-    and learnings, but as a personal challenge. There’s something immensely satisfying
-    about creating something from nothing—every line of code, every design choice,
-    a reflection of my thoughts and curiosity. \n \n This project wasn’t just about sharing
-    knowledge; it was a way to feed my ego, to prove to myself that I could build
-    something tangible, functional, and engaging. 
-     \n \n It’s more
-    than a platform—it’s a work in progress, a continuous journey of iteration and
-    improvement, much like my own learning process.`;
-  let whatsnew = "- added new blog";
 </script>
 
 <div class="flex flex-col gap-4 mt-12">
@@ -36,10 +25,10 @@
   <div class="divider"></div>
   <div class="font-bold">Purpose</div>
   <div>
-    <Blog blogLink={"https://files.yajatvishwakarma.com/purpose.md"}></Blog>
+    <Blog blogText={data.purpose}></Blog>
   </div>
   <div class="divider"></div>
 
   <div class="font-bold">What's new?</div>
-  <Blog blogLink={"https://files.yajatvishwakarma.com/whatsnew.md"}></Blog>
+  <Blog blogText={data.whatsnew}></Blog>
 </div>
